@@ -20,9 +20,13 @@ import org.testfx.framework.junit5.Start;
 /**
  * Tests de l'exercice 6 - vue d'accueil composée par {@code fx:include}.
  *
- * <p>On vérifie à la fois que la structure FXML est correctement assemblée (deux sous-vues
- * présentes), que l'en-tête expose son bouton et son sous-titre, et que la communication entre les
- * deux sous-contrôleurs fonctionne (clic sur le bouton → carte ajoutée + sous-titre mis à jour).
+ * <p>
+ * On vérifie à la fois que la structure FXML est correctement assemblée (deux
+ * sous-vues
+ * présentes), que l'en-tête expose son bouton et son sous-titre, et que la
+ * communication entre les
+ * deux sous-contrôleurs fonctionne (clic sur le bouton → carte ajoutée +
+ * sous-titre mis à jour).
  */
 @ExtendWith(ApplicationExtension.class)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -34,7 +38,7 @@ class VueAccueilControllerTest {
     new VueAccueil().start(stage);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(1)
   void l_entete_avec_titre_et_sous_titre_est_affichee(FxRobot robot) {
@@ -44,7 +48,7 @@ class VueAccueilControllerTest {
         .isNotNull();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(2)
   void le_bouton_nouveau_site_est_present_dans_l_entete(FxRobot robot) {
@@ -57,7 +61,7 @@ class VueAccueilControllerTest {
         .isEqualTo("+ Nouveau site");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(3)
   void la_liste_des_cartes_est_vide_au_demarrage(FxRobot robot) {
@@ -70,7 +74,7 @@ class VueAccueilControllerTest {
         .isEmpty();
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(4)
   void le_sous_titre_indique_aucun_site_declare_au_demarrage(FxRobot robot) {
@@ -80,7 +84,7 @@ class VueAccueilControllerTest {
         .isEqualTo("Aucun site déclaré");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(5)
   void cliquer_sur_nouveau_site_ajoute_une_carte_dans_la_liste(FxRobot robot) {
@@ -95,7 +99,7 @@ class VueAccueilControllerTest {
         .isInstanceOf(SiteCarte.class);
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(6)
   void cliquer_sur_nouveau_site_met_le_sous_titre_a_un_site_declare(FxRobot robot) {
@@ -107,7 +111,7 @@ class VueAccueilControllerTest {
         .isEqualTo("1 site déclaré");
   }
 
-  @Disabled("Retire cette annotation pour activer le test")
+  // @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(7)
   void trois_clics_sur_nouveau_site_ajoutent_trois_cartes_et_passent_le_sous_titre_au_pluriel(
